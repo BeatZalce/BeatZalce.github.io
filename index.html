@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project</title>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="p5/p5.js"></script>
+    <script src="p5/addons/p5.sound.js"></script>
+    <script src="p5/addons/p5.dom.js"></script>
+    <script src="source.js"></script>
+    <script src="ui-master/dist/NexusUI.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #c1{
+           float: left; 
+        }
+
+        #c2{
+           float: left; 
+        }
+
+        #c3{
+           float: left; 
+        }
+
+        #c4{
+           float: left; 
+        }
+
+
+        #bt1_1{
+            background-color: white;
+            border-radius: 50%;
+            padding: 40px 40px;
+            font-size: 45px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #bt1_2{
+            background-color: gainsboro;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        #bt1_3{
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+         #bt2_1{
+            background-color: white;
+            border-radius: 50%;
+            padding: 40px 40px;
+            font-size: 45px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #bt2_2{
+            background-color: gainsboro;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        #bt2_3{
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        #bt3_1{
+            background-color: white;
+            border-radius: 50%;
+            padding: 40px 40px;
+            font-size: 45px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #bt3_2{
+            background-color: gainsboro;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        #bt3_3{
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        #bt4_1{
+            background-color: white;
+            border-radius: 50%;
+            padding: 40px 40px;
+            font-size: 45px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #bt4_2{
+            background-color: gainsboro;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        #bt4_3{
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        #t1{
+           position: absolute;
+           margin-left: 90px;
+           margin-top: 40px;
+           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #t2{
+           position: absolute;
+           margin-left: 410px;
+           margin-top: 40px;
+           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #t3{
+           position: absolute;
+           margin-left: 730px;
+           margin-top: 40px;
+           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #t4{
+           position: absolute;
+           margin-left: 1050px;
+           margin-top: 40px;
+           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #v1{
+           position: absolute;
+           margin-left: 120px;
+           margin-top: 340px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #v2{
+           position: absolute;
+           margin-left: 440px;
+           margin-top: 340px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #v3{
+           position: absolute;
+           margin-left: 760px;
+           margin-top: 340px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #v4{
+           position: absolute;
+           margin-left: 1080px;
+           margin-top: 340px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #r1{
+           position: absolute;
+           margin-left: 120px;
+           margin-top: 440px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #r2{
+           position: absolute;
+           margin-left: 440px;
+           margin-top: 440px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #r3{
+           position: absolute;
+           margin-left: 770px;
+           margin-top: 440px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #r4{
+           position: absolute;
+           margin-left: 1080px;
+           margin-top: 440px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #d1{
+           position: absolute;
+           margin-left: 130px;
+           margin-top: 535px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #d2{
+           position: absolute;
+           margin-left: 450px;
+           margin-top: 535px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #d3{
+           position: absolute;
+           margin-left: 770px;
+           margin-top: 535px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #d4{
+           position: absolute;
+           margin-left: 1090px;
+           margin-top: 535px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #dis1{
+           position: absolute;
+           margin-left: 110px;
+           margin-top: 635px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #dis2{
+           position: absolute;
+           margin-left: 430px;
+           margin-top: 635px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #dis3{
+           position: absolute;
+           margin-left: 760px;
+           margin-top: 635px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #dis4{
+           position: absolute;
+           margin-left: 1070px;
+           margin-top: 635px;
+           font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+
+    <h1 id="t1" >Channel 1</h1>
+    <h1 id="t2">Channel 2</h1>
+    <h1 id="t3">Channel 3</h1>
+    <h1 id="t4">Channel 4</h1>
+    
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+    <div id="c4"></div>
+
+    <h2 id="v1">Volume</h2>
+    <h2 id="v2">Volume</h2>
+    <h2 id="v3">Volume</h2>
+    <h2 id="v4">Volume</h2>
+
+    <h2 id="r1">Reverb</h2>
+    <h2 id="r2">Reverb</h2>
+    <h2 id="r3">Reverb</h2>
+    <h2 id="r4">Reverb</h2>
+
+    <h2 id="d1">Delay</h2>
+    <h2 id="d2">Delay</h2>
+    <h2 id="d3">Delay</h2>
+    <h2 id="d4">Delay</h2>
+
+    <h2 id="dis1">Distortion</h2>
+    <h2 id="dis2">Distortion</h2>
+    <h2 id="dis3">Distortion</h2>
+    <h2 id="dis4">Distortion</h2>
+
+
+</body>
+
+</html>
